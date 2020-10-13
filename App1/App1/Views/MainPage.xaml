@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.Views.MainPage">
+
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Source="{local:ImageResource App1.Assets.MainPage.header.png}" Aspect="Fill"></Image>
+
+        <Grid Grid.Row="1">
+            <ScrollView>
+                <StackLayout Orientation="Vertical" BackgroundColor="White">
+
+                    <ImageButton Source="{local:ImageResource App1.Assets.MainPage.content.png}" 
+                             HeightRequest="590" 
+                             Clicked="Button_Clicked">
+                    </ImageButton>
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+        <Image Grid.Row="2" Source="{local:ImageResource App1.Assets.MainPage.footer.png}" Aspect="Fill"></Image>
+    </Grid>
+    
+</ContentPage>

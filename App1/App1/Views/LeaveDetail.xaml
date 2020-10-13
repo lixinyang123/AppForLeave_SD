@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.Views.LeaveDetail">
+
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ImageButton Grid.Row="0" Source="{local:ImageResource App1.Assets.LeaveDetail.header.png}" 
+                     Aspect="Fill" 
+                     Clicked="ImageButton_Clicked">
+        </ImageButton>
+
+        <ScrollView Grid.Row="1">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="305"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="182"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="255"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="{local:ImageResource App1.Assets.LeaveDetail.content.png}"
+                       Grid.RowSpan="7"
+                       Grid.ColumnSpan="2"
+                       Aspect="Fill" 
+                       HeightRequest="950">
+                </Image>
+
+                <Label x:Name="startTime" Grid.Row="1" Text="10-08 10:10" TextColor="#2B3343" FontSize="15" Margin="115,2,0,0"></Label>
+
+                <Label x:Name="endTime" Grid.Row="2" Text="10-08 10:10" TextColor="#2B3343" FontSize="15" Margin="115,2,0,0"></Label>
+
+                <Label x:Name="name" Grid.Row="4" Text="哈哈哈 - 发起申请" TextColor="#A8A8A8" Margin="50,0,0,0"></Label>
+
+                <StackLayout Grid.Row="5" Orientation="Horizontal">
+                    <Label x:Name="teacherName" Text="一级：[辅导员]李伟 - 审批" TextColor="#A8A8A8" Margin="50,4,0,0"></Label>
+                    <Label Text="通过" TextColor="#20BF7D" Margin="-3,4,0,0"></Label>
+                </StackLayout>
+
+                <Label x:Name="applyTime" Grid.Row="4" Grid.Column="1" Text="10-07 19:40" TextColor="#A8A8A8" Margin="50,0,0,0"></Label>
+
+                <Label x:Name="passTime" Grid.Row="5" Grid.Column="1" Text="10-07 19:40" TextColor="#A8A8A8" Margin="50,4,0,0"></Label>
+
+            </Grid>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

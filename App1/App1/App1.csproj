@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <AssemblyName>App1</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\content.png" />
+    <None Remove="Assets\footer.png" />
+    <None Remove="Assets\header.png" />
+    <None Remove="Assets\LeaveDetail\content.png" />
+    <None Remove="Assets\LeaveDetail\header.png" />
+    <None Remove="Assets\LeaveList\content.png" />
+    <None Remove="Assets\LeaveList\footer.png" />
+    <None Remove="Assets\LeaveList\header.png" />
+    <None Remove="MainActive.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\LeaveDetail\content.png" />
+    <EmbeddedResource Include="Assets\LeaveDetail\header.png" />
+    <EmbeddedResource Include="Assets\LeaveList\content.png" />
+    <EmbeddedResource Include="Assets\LeaveList\footer.png" />
+    <EmbeddedResource Include="Assets\LeaveList\header.png" />
+    <EmbeddedResource Include="Assets\MainPage\content.png" />
+    <EmbeddedResource Include="Assets\MainPage\footer.png" />
+    <EmbeddedResource Include="Assets\MainPage\header.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Configuration.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LeaveDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LeaveList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
