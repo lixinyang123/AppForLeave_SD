@@ -30,5 +30,12 @@ namespace App1.Views
             app.Date = DateTime.Now;
             app.MainPage = new Configuration(app);
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            app.MainPage = new MainPage(app);
+            return true;
+        }
+
     }
 }

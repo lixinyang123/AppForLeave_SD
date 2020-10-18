@@ -12,6 +12,8 @@ namespace App1
 
         public DateTime Date { get; set; }
 
+        public Page LastPage { get; set; }
+
         public App()
         {
             InitializeComponent();
@@ -21,14 +23,18 @@ namespace App1
 
         protected override void OnStart()
         {
+            if (LastPage != null)
+            {
+                MainPage = LastPage;
+                LastPage = null;
+            }
         }
 
         protected override void OnSleep()
         {
+            LastPage = MainPage;
         }
 
-        protected override void OnResume()
-        {
-        }
+        protected override void OnResume() { }
     }
 }

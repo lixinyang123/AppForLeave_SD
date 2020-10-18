@@ -38,5 +38,11 @@ namespace App1.Views
         {
             app.MainPage = new LeaveList(app);
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            app.MainPage = new LeaveList(app);
+            return true;
+        }
     }
 }
